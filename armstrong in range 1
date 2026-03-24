@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class Main {
+        static boolean isArmstrong(int n) {
+        int temp = n;
+        int digits = 0;
+        while (temp > 0) {
+            digits++;
+            temp /= 10;
+        }
+        temp = n;
+        int sum = 0;
+        while (temp > 0) {
+            int d = temp % 10;
+            sum += Math.pow(d, digits);
+            temp /= 10;
+        }
+        return sum == n;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int low = sc.nextInt();
+        int high = sc.nextInt();
+        int totalSum = 0;
+        for (int i = low; i <= high; i++) {
+            if (isArmstrong(i)) {
+                totalSum += i;
+            }
+        }
+        System.out.println(totalSum);
+    }
+}
