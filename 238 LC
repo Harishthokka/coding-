@@ -23,3 +23,6 @@ class Solution {
         return list.toArray(new int[list.size()][]);
     }
 }
+
+
+this is 56 lc
