@@ -1,0 +1,49 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int r=sc.nextInt();
+        int c=sc.nextInt();
+        int msum=0;
+        int sum=0;
+        int rpos=0;
+        int cpos=0;
+        char arr[][]=new char[r][c];
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                arr[i][j]=sc.next().charAt(0);
+            }
+        }
+        for(int i=0;i<r;i++){
+            sum=0;
+            for(int j=0;j<c;j++){
+                if(arr[i][j]=='w'){
+                    sum++;
+                }
+            }
+            if(sum>msum){
+                msum=sum;
+                rpos=i;
+            }
+        }
+        for(int j=0;j<c;j++){
+            sum=0;
+            for(int i=0;i<r;i++){
+                if(arr[i][j]=='w'){
+                    sum++;
+                }
+            }
+            if(sum>msum){
+                msum=sum;
+                cpos=j;
+            }
+        }
+        if(rpos>cpos){
+            System.out.println(rpos+"R");
+        }
+        else{
+            System.out.println(cpos+"C");
+        }
+    }
+}
